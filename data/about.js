@@ -1,11 +1,11 @@
-// About page content (placeholder copy).
+// About page content (placeholder copy — lorem ipsum for layout review).
 
 export const intro = {
   eyebrow: "About Me",
   headline: ["I'm Olumide.", "I Tell Stories That Move People."],
   bio: [
-    "I'm a filmmaker and visual storyteller based in Calgary, Alberta. What started as a passion for capturing moments has grown into a purpose-driven journey — crafting films with intention, emotion, and a unique perspective.",
-    "I don't just point a camera. I listen for the story underneath, then shape it into something that connects, inspires, and lasts far beyond the moment it captures.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
   ],
   portraitHue: 24,
 };
@@ -14,23 +14,23 @@ export const approach = {
   eyebrow: "My Approach",
   title: "Story First. Always.",
   intro:
-    "Every project is unique, but my approach stays the same — intentional, collaborative, and focused on telling yours the right way.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim.",
   values: [
     {
       title: "Authentic",
-      copy: "Real moments over staged perfection. I capture what's true, not just what looks good.",
+      copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.",
     },
     {
       title: "Cinematic",
-      copy: "Every frame is lit, composed, and graded with intention and a film-first eye.",
+      copy: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
     },
     {
       title: "Collaborative",
-      copy: "Your vision leads. I bring the craft to make it feel bigger than you imagined.",
+      copy: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
     },
     {
       title: "Impactful",
-      copy: "Work that moves people to feel, remember, and act — long after the credits roll.",
+      copy: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
     },
   ],
 };
@@ -39,8 +39,8 @@ export const statement = {
   eyebrow: "The Mission",
   title: "From the First Frame to the Lasting Impact.",
   copy: [
-    "I believe every story deserves more than footage — it deserves craft, emotion, and intention. From the first frame to the final cut, I pour myself into work that outlives the moment it captures.",
-    "If you've got a story worth telling, I'd love to help you tell it beautifully.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
   ],
   signature: "Olumide",
   gearHue: 200,
