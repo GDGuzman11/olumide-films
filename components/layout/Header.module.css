@@ -30,13 +30,13 @@
 }
 
 .link {
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-dim);
   padding-block: 6px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
@@ -45,7 +45,7 @@
 }
 
 .active {
-  color: var(--accent-bright);
+  color: var(--text);
   border-bottom-color: var(--accent);
 }
 

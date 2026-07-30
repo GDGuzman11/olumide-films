@@ -6,8 +6,12 @@ _Last updated: Phase 2 (Home page)._
 - **Phase 1 — Foundation:** Next.js 14 scaffold, design tokens, `Header`/`Footer`,
   shared UI (`Container`, `Button`, `Logo`, `SectionEyebrow`, `ComingSoon`), data modules,
   docs, clean README, and public GitHub repo (`GDGuzman11/olumide-films`).
-- **Phase 2 — Home page (`/`):** single-viewport "poster" (`HomeScreen`) matching
-  `Redesigned Home Page.png`:
+- **Phase 2 — Home page (`/`):** cinematic **7-layer** single-viewport composition
+  (`HomeScreen`) — full-bleed `HeroVideo` (poster + reduced-motion fallback, drop-in
+  `public/hero-showreel.mp4`), atmospheric blooms/vignette, SVG film grain, oversized
+  broken-grid Playfair headline + translucent "O" watermark, borderless featured cards
+  overlapping the hero, mouse parallax, premium `MediaCard` hovers, thinned nav. Strict
+  no-scroll at ≥1024px; reduced-motion safe. Earlier notes below kept for history:
   - Hero — eyebrow, headline, lead, `Watch Showreel` (modal) + `View My Work`, `Calgary, AB`
     chip with coordinates.
   - Dock — compact 3-card Featured Work strip (focus-trapped preview `Modal`) + "Every Frame

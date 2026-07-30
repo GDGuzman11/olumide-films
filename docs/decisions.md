@@ -31,6 +31,21 @@ Resend for delivery. Success shown only after the server confirms. (Implemented 
 **Decision:** Public repo; README updated on every push. User-confirmed.
 **Why:** Doubles as a showcase; README as living documentation.
 
+## D9 — Home: cinematic layered composition (Creative-Director pass)
+**Decision:** Rebuild the home as a **7-layer, single-screen cinematic composition** (still
+strict no-scroll): background gradient → full-bleed hero `<video>` (`HeroVideo`, autoplay/
+muted/loop, poster, reduced-motion → poster, fade-in on canplay) → atmosphere (light blooms,
+vignette) → film grain (SVG `feTurbulence`) → oversized broken-grid Playfair headline over a
+contrast scrim with a huge translucent "O" watermark → interactive UI (thin nav, CTAs,
+borderless featured cards floating over the hero bottom, slim footer) → glass highlights.
+Adds slow mouse-parallax (off for reduced-motion/touch), `--dur-slow`/`--ease-cinematic`
+tokens, and a premium `MediaCard` hover (media zoom, gold ring, category fade, title rise).
+Real footage drops into `public/hero-showreel.mp4`; until then an atmospheric gradient
+cinemagraph stands in. **Supersedes D8's two-column hero.** User-confirmed.
+**Why:** The brief wanted an IMAX/A24 *experience*, not a portfolio, while keeping the
+no-scroll rule — so the cinema comes from layering, atmosphere, and oversized editorial type
+rather than scroll. No new dependencies; WCAG AA preserved via scrims; motion is reduced-motion safe.
+
 ## D8 — Home page: single non-scrolling "poster" screen
 **Decision:** Rebuild the home page (`HomeScreen`) as one `100dvh` screen — hero + dock
 (featured work + purpose panel) + slim footer bar — with the global footer suppressed on

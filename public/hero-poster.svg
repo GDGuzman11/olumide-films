@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1080" viewBox="0 0 2560 1080">
+  <defs>
+    <radialGradient id="ember" cx="70%" cy="10%" r="85%">
+      <stop offset="0%" stop-color="#5a3d1e" />
+      <stop offset="42%" stop-color="#2c2013" />
+      <stop offset="78%" stop-color="#0b0b0c" />
+    </radialGradient>
+    <radialGradient id="glow" cx="18%" cy="96%" r="60%">
+      <stop offset="0%" stop-color="#3a2a17" />
+      <stop offset="60%" stop-color="#0b0b0c00" />
+    </radialGradient>
+  </defs>
+  <rect width="2560" height="1080" fill="#0b0b0c" />
+  <rect width="2560" height="1080" fill="url(#ember)" />
+  <rect width="2560" height="1080" fill="url(#glow)" />
+</svg>

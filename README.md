@@ -45,8 +45,9 @@ app/                 # App Router pages, layout, global styles
   about/ work/ contact/
 components/
   layout/            #   Header (nav + drawer), Footer, ConditionalFooter
-  sections/          #   HomeScreen (single-viewport home)
-  ui/                #   Button, Container, Logo, MediaCard, Modal, PreviewBody, ...
+  sections/          #   HomeScreen (layered cinematic single-viewport home)
+  ui/                #   Button, Container, Logo, MediaCard, Modal, HeroVideo, ...
+public/              # hero-poster.svg + drop-in path for hero-showreel.mp4
 data/                # site config + home content + placeholder project data
 docs/                # plan, status, decisions, screenshot analysis, design system
 Screenshots/         # reference designs
@@ -69,6 +70,12 @@ Screenshots/         # reference designs
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Phase 2 (cinematic)** — Rebuilt the home as a 7-layer, single-screen cinematic
+  composition: full-bleed hero `<video>` (`HeroVideo`, autoplay/muted/loop + poster +
+  reduced-motion fallback, drop-in `public/hero-showreel.mp4`), atmospheric blooms + vignette,
+  SVG film grain, oversized broken-grid Playfair headline with a translucent "O" watermark,
+  borderless featured cards overlapping the hero, mouse parallax, and premium `MediaCard`
+  hovers. Thinned the nav. Still strict no-scroll at ≥1024px; motion is reduced-motion safe.
 - **Phase 2 (space fill)** — Redesigned the home hero into two columns (text + a tall
   showreel media frame that opens the reel modal), widened the home canvas
   (`--container-wide` 1500px, new `wide` Container variant), and scaled up the display

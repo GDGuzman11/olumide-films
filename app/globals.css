@@ -53,7 +53,18 @@
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Cinematic easing — slow, weighted, never bouncy */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 0.35s;
+  --dur-slow: 0.9s;
+  --dur-slower: 1.6s;
+
+  /* Atmosphere — reused across the cinematic home layers */
+  --ember: hsl(28 55% 34%);
+  --bloom: rgba(224, 164, 91, 0.16);
+
+  /* Film-grain noise tile (SVG feTurbulence, data-URI) */
+  --grain: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ---------- Reset ---------- */

@@ -1,121 +1,140 @@
 /* ======================================================================
-   Single-screen "poster" home.
-   Mobile / portrait: stacks and scrolls (content can't fit one screen
-   without becoming unusable). Large / landscape: locked to one viewport.
+   Cinematic single-screen home — layered composition (see docs/decisions).
+   Mobile / portrait: stacks and scrolls. Large / landscape: locked 100dvh.
+   Layer order (z): video 0 · bloom/watermark 1 · vignette 2 · content 3 · grain 4
    ====================================================================== */
 
 .screen {
   position: relative;
+  overflow: hidden;
+  background: #0b0b0c;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  position: relative;
+/* ---------- Atmosphere layers ---------- */
+.bloom,
+.vignette,
+.watermark,
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bloom {
+  z-index: 1;
+  background: radial-gradient(42% 42% at 68% 16%, var(--bloom), transparent 70%);
+  transform: translate3d(calc(var(--mx, 0) * 40px), calc(var(--my, 0) * 40px), 0);
+  transition: transform var(--dur-slow) var(--ease-cinematic);
+}
+
+.vignette {
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 11, 12, 0.88) 0%,
+      rgba(11, 11, 12, 0.32) 44%,
+      rgba(11, 11, 12, 0) 66%
+    ),
+    radial-gradient(135% 115% at 50% -5%, transparent 52%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+.watermark {
+  z-index: 1;
   display: flex;
   align-items: center;
-  min-height: 66vh;
+  justify-content: flex-end;
+  color: rgba(224, 164, 91, 0.05);
+}
+
+.watermark svg {
+  width: min(96vh, 1000px);
+  height: min(96vh, 1000px);
+  margin-right: -7%;
+  transform: translate3d(calc(var(--mx, 0) * 26px), calc(var(--my, 0) * 26px), 0);
+  transition: transform var(--dur-slow) var(--ease-cinematic);
+}
+
+.grain {
+  z-index: 4;
+  background-image: var(--grain);
+  background-size: 180px 180px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  animation: grain 6s steps(6) infinite;
+}
+
+/* ---------- Hero typography ---------- */
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
   padding-block: var(--space-8);
 }
 
-.heroBg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-      85% 90% at 72% 12%,
-      hsl(28 42% 26%) 0%,
-      hsl(24 30% 13%) 40%,
-      #0b0b0c 78%
-    ),
-    #0b0b0c;
-}
-
-.heroBg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(11, 11, 12, 0.92) 0%,
-    rgba(11, 11, 12, 0.4) 52%,
-    rgba(11, 11, 12, 0.72) 100%
-  );
-}
-
-.heroInner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-}
-
 .heroText {
-  max-width: 640px;
+  max-width: min(680px, 100%);
 }
 
-/* Right-hand showreel frame (fills hero space, opens the reel modal) */
-.heroMedia {
-  position: relative;
-  width: 100%;
-  min-height: 42vh;
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--bg-elev);
-  cursor: pointer;
-  transition: border-color var(--dur) var(--ease);
-}
-
-.heroMedia:hover {
-  border-color: var(--line-strong);
-}
-
-.heroPlay {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 78px;
-  height: 78px;
-  display: grid;
-  place-items: center;
-  color: #0b0b0c;
-  background: rgba(244, 242, 238, 0.92);
-  border-radius: var(--radius-pill);
-  transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
-}
-
-.heroPlay svg {
-  margin-left: 4px;
-}
-
-.heroMedia:hover .heroPlay {
-  background: var(--accent-bright);
-  transform: scale(1.06);
+.eyebrow {
+  color: var(--accent-bright);
 }
 
 .title {
-  margin-top: var(--space-3);
-  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.75rem, 11vw, 4.5rem);
+  transform: translate3d(calc(var(--mx, 0) * -10px), calc(var(--my, 0) * -10px), 0);
+  transition: transform var(--dur-slow) var(--ease-cinematic);
+}
+
+.line {
+  display: block;
+  will-change: transform;
+}
+
+.line:nth-child(1),
+.line:nth-child(2) {
   text-transform: uppercase;
+}
+
+.line:nth-child(2) {
+  margin-left: 0.5ch;
+}
+
+.line:nth-child(3) {
+  margin-top: 0.14em;
+  margin-left: 2ch;
+  font-size: 0.64em;
+}
+
+.line:nth-child(4) {
+  margin-left: 2ch;
+  font-size: 0.64em;
 }
 
 .accent {
   color: var(--accent-bright);
+  font-style: italic;
 }
 
 .lead {
-  margin-top: var(--space-4);
-  max-width: 44ch;
+  margin-top: var(--space-5);
+  max-width: 42ch;
   color: var(--text-muted);
   font-size: 1rem;
 }
 
 .actions {
-  margin-top: var(--space-5);
+  margin-top: var(--space-6);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -144,16 +163,17 @@
 .reelIcon {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-pill);
   color: var(--accent-bright);
-  transition: border-color var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 
 .reel:hover .reelIcon {
   border-color: var(--accent-bright);
+  transform: scale(1.06);
 }
 
 .location {
@@ -161,7 +181,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -177,27 +197,38 @@
   letter-spacing: 0.08em;
 }
 
-/* ---------- Dock ---------- */
+/* ---------- Featured dock (floats over hero bottom) ---------- */
 .dock {
   position: relative;
-  z-index: 1;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
+  z-index: 3;
+  padding-top: var(--space-7);
+  background: linear-gradient(to top, rgba(11, 11, 12, 0.94) 34%, rgba(11, 11, 12, 0) 100%);
 }
 
 .dockInner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  padding-block: var(--space-6);
+  padding-block: 0 var(--space-5);
 }
 
-.workHead {
+.dockHead {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-4);
+  flex-wrap: wrap;
   margin-bottom: var(--space-4);
+}
+
+.purposeInline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.purposeText {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .viewAll {
@@ -208,6 +239,7 @@
   color: var(--accent-bright);
   display: inline-flex;
   gap: var(--space-2);
+  white-space: nowrap;
   transition: gap var(--dur) var(--ease);
 }
 
@@ -221,45 +253,25 @@
   gap: var(--space-4);
 }
 
-.purpose {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-3);
-  padding-top: var(--space-2);
-}
-
-.purposeTitle {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  text-transform: uppercase;
-}
-
-.purposeCopy {
-  color: var(--text-muted);
-  max-width: 40ch;
-  font-size: 0.95rem;
-}
-
-.purpose :global(.btn) {
-  margin-top: var(--space-2);
-}
-
-/* ---------- Slim footer bar ---------- */
+/* ---------- Slim footer ---------- */
 .footerBar {
+  position: relative;
+  z-index: 3;
+  background: rgba(11, 11, 12, 0.94);
   border-top: 1px solid var(--line);
 }
 
 .footerInner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  padding-block: var(--space-5);
+  gap: var(--space-3);
+  padding-block: var(--space-4);
 }
 
 .based {
   color: var(--text-muted);
   font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .socials {
@@ -282,19 +294,24 @@
 }
 
 .tag {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-.cards :global(.eyebrow) {
-  font-size: 0.62rem;
+@keyframes grain {
+  0% { background-position: 0 0; }
+  20% { background-position: -30px 10px; }
+  40% { background-position: 20px -20px; }
+  60% { background-position: -10px 25px; }
+  80% { background-position: 25px 15px; }
+  100% { background-position: 0 0; }
 }
 
 /* ======================================================================
-   Cards: 3-up once there's room
+   Cards 3-up once there's room
    ====================================================================== */
 @media (min-width: 640px) {
   .cards {
@@ -303,67 +320,39 @@
 }
 
 /* ======================================================================
-   Locked single viewport (laptop / desktop / landscape tablet)
+   Locked single viewport (laptop / desktop / landscape)
    ====================================================================== */
 @media (min-width: 1024px) {
   .screen {
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
     height: 100dvh;
-    /* Pull up so the hero image sits behind the transparent header,
-       while total height stays exactly one viewport (no scroll). */
     margin-top: calc(-1 * var(--header-h));
     padding-top: var(--header-h);
-    overflow: hidden;
-  }
-
-  .hero {
-    min-height: 0;
-    align-items: stretch;
-    padding-block: var(--space-6);
-  }
-
-  .heroInner {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: stretch;
-    gap: var(--space-8);
+    grid-template-rows: minmax(0, 1fr) auto auto;
+  }
+
+  .content {
+    padding-block: 0;
   }
 
   .heroText {
-    align-self: center;
-    max-width: 700px;
-  }
-
-  .heroMedia {
-    min-height: min(58vh, 620px);
-    height: 100%;
+    max-width: min(46vw, 720px);
   }
 
   .title {
-    font-size: clamp(3.25rem, 5.4vw, 7rem);
+    font-size: clamp(3.5rem, 7.4vw, 7.5rem);
   }
 
   .lead {
-    font-size: 1.1rem;
-    max-width: 46ch;
+    font-size: 1.05rem;
   }
 
-  .dockInner {
-    display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    align-items: end;
-    gap: var(--space-7);
-    padding-block: var(--space-5);
+  .dock {
+    padding-top: var(--space-8);
   }
 
-  .purpose {
-    align-items: flex-start;
-    text-align: left;
-    border-left: 1px solid var(--line);
-    padding-left: var(--space-6);
-    height: 100%;
-    justify-content: center;
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footerInner {
@@ -379,12 +368,8 @@
   }
 }
 
-/* Extra breathing room on tall large screens */
-@media (min-width: 1024px) and (min-height: 900px) {
-  .hero {
-    padding-block: var(--space-8);
-  }
-  .dockInner {
-    padding-block: var(--space-6);
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
   }
 }
