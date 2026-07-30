@@ -69,6 +69,10 @@ Screenshots/         # reference designs
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Phase 2 (space fill)** — Redesigned the home hero into two columns (text + a tall
+  showreel media frame that opens the reel modal), widened the home canvas
+  (`--container-wide` 1500px, new `wide` Container variant), and scaled up the display
+  type — eliminating the wide-screen negative space while staying one non-scrolling screen.
 - **Phase 2 (redesign)** — Reworked the home page into a single, non-scrolling `100dvh`
   "poster" (`HomeScreen`): hero (showreel modal + View My Work + location/coords), a dock
   with a compact 3-card Featured Work strip and an "Every Frame Has a Purpose" panel, and a

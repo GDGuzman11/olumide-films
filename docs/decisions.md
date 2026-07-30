@@ -39,6 +39,12 @@ small portrait screens. Replaces `Hero`/`FeaturedWork`/`QuoteBand` (removed). Us
 **Why:** Matches `Redesigned Home Page.png` and the explicit "no scroll" goal, while keeping
 mobile usable/accessible (forcing one screen on phones would break readability + touch targets).
 
+**Refinement (per `Home Page Draft 1.jpg`):** on wide displays the single narrow column left
+large negative space. Fixed by (a) a **two-column hero** — text left + a tall showreel media
+frame right (opens the reel modal), appropriate for a videographer; (b) a **wider canvas**
+(`--container-wide` 1500px) for hero/dock/footer; (c) **larger display type** (headline ceiling
+~7rem). Media stretches to hero height to close the vertical gap above the dock.
+
 ## D7 — Navigation: About · Work · Contact only
 **Decision:** Remove the `Services` and `Journal` nav items (and the home `#services`
 strip). Final primary nav is **About → Work → Contact**, in that order. User-confirmed.

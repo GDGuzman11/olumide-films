@@ -8,6 +8,7 @@ import Logo from "@/components/ui/Logo";
 import MediaCard from "@/components/ui/MediaCard";
 import Modal from "@/components/ui/Modal";
 import PreviewBody from "@/components/ui/PreviewBody";
+import VideoPlaceholder from "@/components/ui/VideoPlaceholder";
 import { hero, purpose } from "@/data/home";
 import { site, socials } from "@/data/site";
 import { featuredProjects } from "@/data/projects";
@@ -23,42 +24,58 @@ export default function HomeScreen() {
       {/* Hero */}
       <div className={styles.hero}>
         <div className={styles.heroBg} aria-hidden="true" />
-        <Container className={styles.heroInner}>
-          <p className="eyebrow">{hero.eyebrow}</p>
-          <h1 className={styles.title}>
-            {hero.headline[0]} {hero.headline[1]}
-            <br />
-            <span className={styles.accent}>{hero.headline[2]}</span>
-          </h1>
-          <p className={styles.lead}>{hero.lead}</p>
+        <Container wide className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <p className="eyebrow">{hero.eyebrow}</p>
+            <h1 className={styles.title}>
+              {hero.headline[0]} {hero.headline[1]}
+              <br />
+              <span className={styles.accent}>{hero.headline[2]}</span>
+            </h1>
+            <p className={styles.lead}>{hero.lead}</p>
 
-          <div className={styles.actions}>
-            <button type="button" className={styles.reel} onClick={() => setReelOpen(true)}>
-              <span className={styles.reelIcon} aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="15" height="15">
-                  <path d="M8 5v14l11-7z" fill="currentColor" />
-                </svg>
+            <div className={styles.actions}>
+              <button type="button" className={styles.reel} onClick={() => setReelOpen(true)}>
+                <span className={styles.reelIcon} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15">
+                    <path d="M8 5v14l11-7z" fill="currentColor" />
+                  </svg>
+                </span>
+                Watch Showreel
+              </button>
+              <Button href="/work" variant="outline" arrow>
+                View My Work
+              </Button>
+            </div>
+
+            <p className={styles.location}>
+              <span className={styles.dot} aria-hidden="true">
+                &#9679;
               </span>
-              Watch Showreel
-            </button>
-            <Button href="/work" variant="outline" arrow>
-              View My Work
-            </Button>
+              {site.locationShort}
+              <span className={styles.coords}>{site.coordinates}</span>
+            </p>
           </div>
 
-          <p className={styles.location}>
-            <span className={styles.dot} aria-hidden="true">
-              &#9679;
+          <button
+            type="button"
+            className={styles.heroMedia}
+            onClick={() => setReelOpen(true)}
+            aria-label="Play the OLUMIDE FILMS showreel"
+          >
+            <VideoPlaceholder hue={26} label="Showreel 2025 · 02:14" />
+            <span className={styles.heroPlay} aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30">
+                <path d="M8 5v14l11-7z" fill="currentColor" />
+              </svg>
             </span>
-            {site.locationShort}
-            <span className={styles.coords}>{site.coordinates}</span>
-          </p>
+          </button>
         </Container>
       </div>
 
       {/* Dock: featured work + purpose panel */}
       <div className={styles.dock}>
-        <Container className={styles.dockInner}>
+        <Container wide className={styles.dockInner}>
           <div className={styles.work}>
             <div className={styles.workHead}>
               <p className="eyebrow">Featured Work</p>
@@ -85,7 +102,7 @@ export default function HomeScreen() {
 
         {/* Slim footer bar */}
         <div className={styles.footerBar}>
-          <Container className={styles.footerInner}>
+          <Container wide className={styles.footerInner}>
             <Logo />
             <p className={styles.based}>
               Based in {site.location} · {site.availability}
