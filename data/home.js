@@ -12,25 +12,6 @@ export const stats = [
   { value: "14", label: "Industry Awards" },
 ];
 
-export const services = [
-  {
-    title: "Brand Films",
-    copy: "Story-driven films that make people feel something about your work.",
-  },
-  {
-    title: "Weddings",
-    copy: "Your day, captured with the weight and beauty it deserves.",
-  },
-  {
-    title: "Documentaries",
-    copy: "Real people, real stories, told with patience and honesty.",
-  },
-  {
-    title: "Commercials",
-    copy: "Product and campaign spots built around detail and restraint.",
-  },
-];
-
 export const quote = {
   eyebrow: "Every Frame Tells a Story",
   line: ["It's your story,", "told beautifully."],

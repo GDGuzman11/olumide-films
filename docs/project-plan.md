@@ -26,8 +26,8 @@ Completed project-inquiry submission via the Contact form (Resend email).
 | `/contact` | Contact + inquiry form | 5 |
 | `/api/contact` | Contact form handler (Resend) | 5 |
 
-`Services` and `Journal` nav items point to home-page anchors for now (not in screenshots);
-scope confirmed with PM before expansion.
+Primary navigation is **About · Work · Contact** (in that order). `Services` and `Journal`
+were removed — not in the screenshots and out of scope (see decisions.md D7).
 
 ## Required features
 - Sticky responsive header with accessible mobile drawer nav.

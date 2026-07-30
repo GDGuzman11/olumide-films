@@ -45,7 +45,7 @@ app/                 # App Router pages, layout, global styles
   about/ work/ contact/
 components/
   layout/            #   Header (nav + mobile drawer), Footer
-  sections/          #   Hero, FeaturedWork, Services, QuoteBand
+  sections/          #   Hero, FeaturedWork, QuoteBand
   ui/                #   Button, Container, Logo, MediaCard, Modal, PreviewBody, ...
 data/                # site config + home content + placeholder project data
 docs/                # plan, status, decisions, screenshot analysis, design system
@@ -62,7 +62,7 @@ Screenshots/         # reference designs
 
 ## Roadmap
 - [x] **Phase 1** — Foundation: scaffold, design tokens, layout shell, docs, repo
-- [x] **Phase 2** — Home page: hero + showreel modal, featured work, services, quote band
+- [x] **Phase 2** — Home page: hero + showreel modal, featured work, quote band
 - [ ] **Phase 3** — About page
 - [ ] **Phase 4** — Portfolio page
 - [ ] **Phase 5** — Contact page + backend (Resend, validation, anti-spam)
@@ -70,7 +70,7 @@ Screenshots/         # reference designs
 
 ## Changelog
 - **Phase 2** — Home page: hero (headline, showreel modal, stat strip, location),
-  Featured Work grid with accessible preview modal, Services strip (`#services`), and
-  quote/CTA band. Added `MediaCard`, `Modal`, `VideoPlaceholder`, `PreviewBody`.
+  Featured Work grid with accessible preview modal, and quote/CTA band. Added `MediaCard`,
+  `Modal`, `VideoPlaceholder`, `PreviewBody`. Navigation set to About · Work · Contact.
 - **Phase 1** — Next.js foundation: design system, Header/Footer, shared UI, routing
   stubs, docs, and clean README.

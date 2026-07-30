@@ -11,7 +11,6 @@ _Last updated: Phase 2 (Home page)._
     (accessible showreel `Modal`), stat strip, `Calgary, AB` chip.
   - `FeaturedWork` — 3 `MediaCard`s (play button, category, title, view project) with a
     focus-trapped preview `Modal`.
-  - `Services` strip (`#services`) — four service cards.
   - `QuoteBand` — "It's your story, told beautifully" + CTA.
   - New reusable UI: `MediaCard`, `Modal`, `VideoPlaceholder`, `PreviewBody`.
   - Verified: `lint` clean, `build` succeeds, dev server renders (HTTP 200).

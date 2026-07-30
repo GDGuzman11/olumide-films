@@ -31,6 +31,8 @@ Resend for delivery. Success shown only after the server confirms. (Implemented 
 **Decision:** Public repo; README updated on every push. User-confirmed.
 **Why:** Doubles as a showcase; README as living documentation.
 
-## D7 — Services / Journal nav
-**Decision:** Point to home-page anchors for now; not built as full pages.
-**Why:** Present in the nav bar but absent from screenshots. Revisit if content is provided.
+## D7 — Navigation: About · Work · Contact only
+**Decision:** Remove the `Services` and `Journal` nav items (and the home `#services`
+strip). Final primary nav is **About → Work → Contact**, in that order. User-confirmed.
+**Why:** Services/Journal were not in the screenshots and had no dedicated content; a
+focused three-item nav matches the intended pages and keeps the header clean.
