@@ -22,14 +22,18 @@ _Last updated: Phase 2 (Home page)._
   - Nav set to About · Work · Contact.
   - Verified: `lint` clean, `build` succeeds, dev server renders (HTTP 200).
 
+- **Phase 3 — About page (`/about`):** `AboutIntro` (headline, bio, Book-a-Project CTA,
+  location, portrait), `Approach` ("Story First. Always." + four `ValueCard`s:
+  Authentic/Cinematic/Collaborative/Impactful), and `PersonalStatement` (media, statement,
+  signature, CTA). One `h1`, global footer via `ConditionalFooter`. Lint + build clean, 200.
+
 ## In progress
-- Awaiting approval to start Phase 3 (About page).
+- Awaiting approval to start Phase 4 (Portfolio page).
 
 ## Blocked
 - None.
 
 ## Remaining
-- Phase 3: About page.
 - Phase 4: Portfolio page.
 - Phase 5: Contact page + `/api/contact` (Resend, validation, anti-spam).
 - Phase 6: Responsive/a11y/security QA, Vercel + Cloudflare prep, final report.

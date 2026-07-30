@@ -1,0 +1,34 @@
+.card {
+  list-style: none;
+  padding: var(--space-6);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--dur-slow) var(--ease-cinematic),
+    transform var(--dur-slow) var(--ease-cinematic);
+}
+
+.card:hover {
+  border-color: rgba(200, 137, 46, 0.6);
+  transform: translateY(-4px);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.title {
+  margin-top: var(--space-4);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.copy {
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}

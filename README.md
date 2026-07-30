@@ -63,13 +63,16 @@ Screenshots/         # reference designs
 
 ## Roadmap
 - [x] **Phase 1** — Foundation: scaffold, design tokens, layout shell, docs, repo
-- [x] **Phase 2** — Home page: hero + showreel modal, featured work, quote band
-- [ ] **Phase 3** — About page
+- [x] **Phase 2** — Home page: cinematic layered single-viewport composition
+- [x] **Phase 3** — About page: intro + bio, "My Approach" value cards, personal statement
 - [ ] **Phase 4** — Portfolio page
 - [ ] **Phase 5** — Contact page + backend (Resend, validation, anti-spam)
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Phase 3** — About page (`/about`): intro with bio + portrait, "My Approach" grid of four
+  `ValueCard`s, and a personal-statement section with signature. Added `data/about.js`,
+  `ValueCard`, and `AboutIntro`/`Approach`/`PersonalStatement` sections.
 - **Phase 2 (cinematic)** — Rebuilt the home as a 7-layer, single-screen cinematic
   composition: full-bleed hero `<video>` (`HeroVideo`, autoplay/muted/loop + poster +
   reduced-motion fallback, drop-in `public/hero-showreel.mp4`), atmospheric blooms + vignette,

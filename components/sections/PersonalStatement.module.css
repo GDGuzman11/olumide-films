@@ -1,0 +1,46 @@
+.section {
+  padding-block: var(--space-9);
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.title {
+  margin-top: var(--space-3);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  text-transform: uppercase;
+}
+
+.copy {
+  margin-top: var(--space-5);
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.signature {
+  margin-block: var(--space-6) var(--space-6);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2.4rem;
+  color: var(--text);
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-8);
+  }
+}
