@@ -4,8 +4,13 @@ Cinematic film & visual storytelling studio website — a dark, responsive, acce
 marketing/portfolio site for **OLUMIDE FILMS** (Calgary, AB), built from reference
 screenshots.
 
-> **Status:** Phase 2 — Home page complete. About, Portfolio, and Contact pages are
-> delivered in later phases (see roadmap).
+> **Status:** Home (`/`) and About (`/about`) complete — both are single, non-scrolling
+> cinematic screens. Work (`/work`) and Contact (`/contact`) are next.
+>
+> **Resume next session →** Phase 4: build the **Work / Portfolio page (`/work`)** using the
+> shared non-scroll pattern (`ScrollLock` + `MiniFooter`) — a single-screen hero + filterable
+> project grid (reusing `MediaCard`) that fits `100dvh` at ≥1024px. Note: About/Home currently
+> use **lorem-ipsum placeholder** copy pending final content.
 
 ## Tech stack
 - **Next.js 14** (App Router) + **React 18** — JavaScript
