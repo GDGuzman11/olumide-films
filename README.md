@@ -4,8 +4,8 @@ Cinematic film & visual storytelling studio website — a dark, responsive, acce
 marketing/portfolio site for **OLUMIDE FILMS** (Calgary, AB), built from reference
 screenshots.
 
-> **Status:** Phase 1 — Foundation complete. Homepage, About, Portfolio, and Contact
-> pages are delivered in later phases (see roadmap).
+> **Status:** Phase 2 — Home page complete. About, Portfolio, and Contact pages are
+> delivered in later phases (see roadmap).
 
 ## Tech stack
 - **Next.js 14** (App Router) + **React 18** — JavaScript
@@ -45,8 +45,9 @@ app/                 # App Router pages, layout, global styles
   about/ work/ contact/
 components/
   layout/            #   Header (nav + mobile drawer), Footer
-  ui/                #   Button, Container, Logo, SectionEyebrow, ComingSoon
-data/                # site config + placeholder project data
+  sections/          #   Hero, FeaturedWork, Services, QuoteBand
+  ui/                #   Button, Container, Logo, MediaCard, Modal, PreviewBody, ...
+data/                # site config + home content + placeholder project data
 docs/                # plan, status, decisions, screenshot analysis, design system
 Screenshots/         # reference designs
 ```
@@ -61,12 +62,15 @@ Screenshots/         # reference designs
 
 ## Roadmap
 - [x] **Phase 1** — Foundation: scaffold, design tokens, layout shell, docs, repo
-- [ ] **Phase 2** — Home page
+- [x] **Phase 2** — Home page: hero + showreel modal, featured work, services, quote band
 - [ ] **Phase 3** — About page
 - [ ] **Phase 4** — Portfolio page
 - [ ] **Phase 5** — Contact page + backend (Resend, validation, anti-spam)
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Phase 2** — Home page: hero (headline, showreel modal, stat strip, location),
+  Featured Work grid with accessible preview modal, Services strip (`#services`), and
+  quote/CTA band. Added `MediaCard`, `Modal`, `VideoPlaceholder`, `PreviewBody`.
 - **Phase 1** — Next.js foundation: design system, Header/Footer, shared UI, routing
   stubs, docs, and clean README.

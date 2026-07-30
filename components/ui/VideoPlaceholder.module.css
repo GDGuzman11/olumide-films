@@ -1,0 +1,33 @@
+.media {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      120% 120% at 30% 20%,
+      hsl(var(--h) 45% 22%) 0%,
+      hsl(var(--h) 30% 10%) 45%,
+      #0b0b0c 100%
+    );
+  overflow: hidden;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      hsl(var(--h) 60% 60% / 0.12) 1px,
+      transparent 1px
+    );
+  background-size: 4px 4px;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.label {
+  position: absolute;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}

@@ -1,27 +1,28 @@
 # Project Status — OLUMIDE FILMS
 
-_Last updated: Phase 1 (Foundation)._
+_Last updated: Phase 2 (Home page)._
 
 ## Completed
-- Repository inspected; 5 project agents and 4 screenshots reviewed.
-- Screenshot analysis and design system documented.
-- Next.js 14 (App Router) scaffold: `package.json`, `next.config.mjs`, `jsconfig.json`,
-  ESLint config, `.gitignore`, `.env.example`.
-- Global design tokens + base styles (`app/globals.css`).
-- Shared components: `Container`, `Button`, `Logo`, `SectionEyebrow`, `ComingSoon`.
-- Layout shell: `Header` (sticky nav + accessible mobile drawer) and `Footer`.
-- Data modules: `data/site.js`, `data/projects.js`.
-- Placeholder Home + route stubs for `/about`, `/work`, `/contact`.
-- Project docs and clean README.
+- **Phase 1 — Foundation:** Next.js 14 scaffold, design tokens, `Header`/`Footer`,
+  shared UI (`Container`, `Button`, `Logo`, `SectionEyebrow`, `ComingSoon`), data modules,
+  docs, clean README, and public GitHub repo (`GDGuzman11/olumide-films`).
+- **Phase 2 — Home page (`/`):**
+  - `Hero` — eyebrow, uppercase serif headline, lead, `Book a Project` + `Watch Showreel`
+    (accessible showreel `Modal`), stat strip, `Calgary, AB` chip.
+  - `FeaturedWork` — 3 `MediaCard`s (play button, category, title, view project) with a
+    focus-trapped preview `Modal`.
+  - `Services` strip (`#services`) — four service cards.
+  - `QuoteBand` — "It's your story, told beautifully" + CTA.
+  - New reusable UI: `MediaCard`, `Modal`, `VideoPlaceholder`, `PreviewBody`.
+  - Verified: `lint` clean, `build` succeeds, dev server renders (HTTP 200).
 
 ## In progress
-- Phase 1 verification (lint/build/dev) and GitHub repo creation.
+- Awaiting approval to start Phase 3 (About page).
 
 ## Blocked
-- GitHub push: waiting on user to run `gh auth login` (gh CLI not authenticated).
+- None.
 
 ## Remaining
-- Phase 2: Home page.
 - Phase 3: About page.
 - Phase 4: Portfolio page.
 - Phase 5: Contact page + `/api/contact` (Resend, validation, anti-spam).

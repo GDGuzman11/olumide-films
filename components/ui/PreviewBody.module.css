@@ -1,0 +1,40 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.playHint {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  color: #0b0b0c;
+  background: rgba(244, 242, 238, 0.9);
+  border-radius: var(--radius-pill);
+}
+
+.playHint svg {
+  margin-left: 3px;
+}
+
+.title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.copy {
+  color: var(--text-muted);
+  max-width: 60ch;
+}
