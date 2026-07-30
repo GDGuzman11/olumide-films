@@ -13,6 +13,25 @@
   border-color: var(--line-strong);
 }
 
+/* Compact variant — used in the single-screen home dock */
+.compact .media {
+  aspect-ratio: 16 / 10;
+}
+
+.compact .play {
+  width: 48px;
+  height: 48px;
+}
+
+.compact .meta {
+  padding: var(--space-4);
+  gap: var(--space-1);
+}
+
+.compact .title {
+  font-size: 1.05rem;
+}
+
 .media {
   position: relative;
   aspect-ratio: 16 / 11;

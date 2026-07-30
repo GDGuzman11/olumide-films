@@ -1,0 +1,324 @@
+/* ======================================================================
+   Single-screen "poster" home.
+   Mobile / portrait: stacks and scrolls (content can't fit one screen
+   without becoming unusable). Large / landscape: locked to one viewport.
+   ====================================================================== */
+
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 66vh;
+  padding-block: var(--space-8);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+      85% 90% at 72% 12%,
+      hsl(28 42% 26%) 0%,
+      hsl(24 30% 13%) 40%,
+      #0b0b0c 78%
+    ),
+    #0b0b0c;
+}
+
+.heroBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 12, 0.92) 0%,
+    rgba(11, 11, 12, 0.4) 52%,
+    rgba(11, 11, 12, 0.72) 100%
+  );
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.title {
+  margin-top: var(--space-3);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  text-transform: uppercase;
+}
+
+.accent {
+  color: var(--accent-bright);
+}
+
+.lead {
+  margin-top: var(--space-4);
+  max-width: 44ch;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.actions {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.reel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color var(--dur) var(--ease);
+}
+
+.reel:hover {
+  color: var(--accent-bright);
+}
+
+.reelIcon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--accent-bright);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.reel:hover .reelIcon {
+  border-color: var(--accent-bright);
+}
+
+.location {
+  margin-top: var(--space-6);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dot {
+  color: var(--accent-bright);
+  font-size: 0.55rem;
+}
+
+.coords {
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Dock ---------- */
+.dock {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.dockInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+}
+
+.workHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.viewAll {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  display: inline-flex;
+  gap: var(--space-2);
+  transition: gap var(--dur) var(--ease);
+}
+
+.viewAll:hover {
+  gap: var(--space-3);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.purpose {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.purposeTitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-transform: uppercase;
+}
+
+.purposeCopy {
+  color: var(--text-muted);
+  max-width: 40ch;
+  font-size: 0.95rem;
+}
+
+.purpose :global(.btn) {
+  margin-top: var(--space-2);
+}
+
+/* ---------- Slim footer bar ---------- */
+.footerBar {
+  border-top: 1px solid var(--line);
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+}
+
+.based {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.social {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease);
+}
+
+.social:hover {
+  color: var(--accent-bright);
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cards :global(.eyebrow) {
+  font-size: 0.62rem;
+}
+
+/* ======================================================================
+   Cards: 3-up once there's room
+   ====================================================================== */
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ======================================================================
+   Locked single viewport (laptop / desktop / landscape tablet)
+   ====================================================================== */
+@media (min-width: 1024px) {
+  .screen {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: 100dvh;
+    /* Pull up so the hero image sits behind the transparent header,
+       while total height stays exactly one viewport (no scroll). */
+    margin-top: calc(-1 * var(--header-h));
+    padding-top: var(--header-h);
+    overflow: hidden;
+  }
+
+  .hero {
+    min-height: 0;
+    padding-block: var(--space-6);
+  }
+
+  .heroInner {
+    max-width: 700px;
+  }
+
+  .title {
+    font-size: clamp(3rem, 5.2vw, 5.25rem);
+  }
+
+  .dockInner {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    align-items: end;
+    gap: var(--space-7);
+    padding-block: var(--space-5);
+  }
+
+  .purpose {
+    align-items: flex-start;
+    text-align: left;
+    border-left: 1px solid var(--line);
+    padding-left: var(--space-6);
+    height: 100%;
+    justify-content: center;
+  }
+
+  .footerInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-4);
+  }
+
+  .based {
+    flex: 1;
+    padding-inline: var(--space-6);
+  }
+}
+
+/* Extra breathing room on tall large screens */
+@media (min-width: 1024px) and (min-height: 900px) {
+  .hero {
+    padding-block: var(--space-8);
+  }
+  .dockInner {
+    padding-block: var(--space-6);
+  }
+}

@@ -26,6 +26,20 @@ Evidence = visible in screenshot. Inference = reasonable UX/design assumption.
   over a night skyline image; supporting copy on the right (inference: CTA into contact).
 - **Proportions:** hero text column ≈ 55% width, media/stat area ≈ 35%, remainder gap.
 
+## 1b. Redesigned Home Page (current implementation)
+Source: `Screenshots/Redesigned Home Page.png`. A **single, non-scrolling viewport** poster
+that supersedes the scrolling home layout above.
+- **Header:** transparent over the hero image; nav kept at About · Work · Contact +
+  `BOOK A PROJECT`.
+- **Hero (top ~60%):** eyebrow, headline `STORIES THAT MOVE. IMPACT THAT LASTS.` (LASTS amber),
+  lead, two CTAs — `WATCH SHOWREEL` (modal) + `VIEW MY WORK →` — and a `CALGARY, AB`
+  chip with coordinates. No stat strip.
+- **Dock (bottom):** left = compact row of 3 featured cards (play + category + title);
+  right = `EVERY FRAME HAS A PURPOSE.` panel with copy + `ABOUT OLUMIDE →`.
+- **Slim footer bar:** logo · based-in/availability · socials · `CREATE. INSPIRE. LEAVE A LEGACY.`
+- **No-scroll goal:** locked to `100dvh` at ≥1024px (and landscape); stacks/scrolls on
+  small portrait screens for usability.
+
 ## 2. About Me
 - **Intro:** eyebrow `ABOUT ME`; headline `I'M OLUMIDE. I TELL STORIES THAT MOVE PEOPLE.`
   (accent on second sentence). Bio paragraph, `BOOK A PROJECT` button, location chip.

@@ -6,13 +6,16 @@ _Last updated: Phase 2 (Home page)._
 - **Phase 1 — Foundation:** Next.js 14 scaffold, design tokens, `Header`/`Footer`,
   shared UI (`Container`, `Button`, `Logo`, `SectionEyebrow`, `ComingSoon`), data modules,
   docs, clean README, and public GitHub repo (`GDGuzman11/olumide-films`).
-- **Phase 2 — Home page (`/`):**
-  - `Hero` — eyebrow, uppercase serif headline, lead, `Book a Project` + `Watch Showreel`
-    (accessible showreel `Modal`), stat strip, `Calgary, AB` chip.
-  - `FeaturedWork` — 3 `MediaCard`s (play button, category, title, view project) with a
-    focus-trapped preview `Modal`.
-  - `QuoteBand` — "It's your story, told beautifully" + CTA.
-  - New reusable UI: `MediaCard`, `Modal`, `VideoPlaceholder`, `PreviewBody`.
+- **Phase 2 — Home page (`/`):** single-viewport "poster" (`HomeScreen`) matching
+  `Redesigned Home Page.png`:
+  - Hero — eyebrow, headline, lead, `Watch Showreel` (modal) + `View My Work`, `Calgary, AB`
+    chip with coordinates.
+  - Dock — compact 3-card Featured Work strip (focus-trapped preview `Modal`) + "Every Frame
+    Has a Purpose" panel with `About Olumide`.
+  - Slim footer bar; global footer suppressed on `/` via `ConditionalFooter`.
+  - No-scroll locked to `100dvh` at ≥1024px/landscape; stacks + scrolls on small portrait.
+  - Reusable UI: `MediaCard` (+ compact variant), `Modal`, `VideoPlaceholder`, `PreviewBody`.
+  - Nav set to About · Work · Contact.
   - Verified: `lint` clean, `build` succeeds, dev server renders (HTTP 200).
 
 ## In progress

@@ -44,8 +44,8 @@ app/                 # App Router pages, layout, global styles
   page.js            #   Home (/)
   about/ work/ contact/
 components/
-  layout/            #   Header (nav + mobile drawer), Footer
-  sections/          #   Hero, FeaturedWork, QuoteBand
+  layout/            #   Header (nav + drawer), Footer, ConditionalFooter
+  sections/          #   HomeScreen (single-viewport home)
   ui/                #   Button, Container, Logo, MediaCard, Modal, PreviewBody, ...
 data/                # site config + home content + placeholder project data
 docs/                # plan, status, decisions, screenshot analysis, design system
@@ -69,6 +69,11 @@ Screenshots/         # reference designs
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Phase 2 (redesign)** — Reworked the home page into a single, non-scrolling `100dvh`
+  "poster" (`HomeScreen`): hero (showreel modal + View My Work + location/coords), a dock
+  with a compact 3-card Featured Work strip and an "Every Frame Has a Purpose" panel, and a
+  slim footer bar. Global footer suppressed on `/` via `ConditionalFooter`; added a compact
+  `MediaCard` variant. Locked to one screen at ≥1024px/landscape; stacks on small portrait.
 - **Phase 2** — Home page: hero (headline, showreel modal, stat strip, location),
   Featured Work grid with accessible preview modal, and quote/CTA band. Added `MediaCard`,
   `Modal`, `VideoPlaceholder`, `PreviewBody`. Navigation set to About · Work · Contact.

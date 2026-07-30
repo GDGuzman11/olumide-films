@@ -5,11 +5,11 @@ import styles from "./MediaCard.module.css";
  * Project media card: gradient placeholder media, centered play control,
  * category eyebrow, title, and "View Project". `onOpen` receives the project.
  */
-export default function MediaCard({ project, onOpen }) {
+export default function MediaCard({ project, onOpen, compact = false }) {
   const { title, categoryLabel, hue } = project;
 
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${compact ? styles.compact : ""}`}>
       <div className={styles.media}>
         <VideoPlaceholder hue={hue} />
         <button
@@ -27,9 +27,11 @@ export default function MediaCard({ project, onOpen }) {
       <div className={styles.meta}>
         <p className={`eyebrow ${styles.category}`}>{categoryLabel}</p>
         <h3 className={styles.title}>{title}</h3>
-        <button type="button" className={styles.view} onClick={() => onOpen(project)}>
-          View Project <span aria-hidden="true">&rarr;</span>
-        </button>
+        {!compact && (
+          <button type="button" className={styles.view} onClick={() => onOpen(project)}>
+            View Project <span aria-hidden="true">&rarr;</span>
+          </button>
+        )}
       </div>
     </article>
   );

@@ -31,6 +31,14 @@ Resend for delivery. Success shown only after the server confirms. (Implemented 
 **Decision:** Public repo; README updated on every push. User-confirmed.
 **Why:** Doubles as a showcase; README as living documentation.
 
+## D8 — Home page: single non-scrolling "poster" screen
+**Decision:** Rebuild the home page (`HomeScreen`) as one `100dvh` screen — hero + dock
+(featured work + purpose panel) + slim footer bar — with the global footer suppressed on
+`/` via `ConditionalFooter`. Locked no-scroll at ≥1024px/landscape; stacks and scrolls on
+small portrait screens. Replaces `Hero`/`FeaturedWork`/`QuoteBand` (removed). User-confirmed.
+**Why:** Matches `Redesigned Home Page.png` and the explicit "no scroll" goal, while keeping
+mobile usable/accessible (forcing one screen on phones would break readability + touch targets).
+
 ## D7 — Navigation: About · Work · Contact only
 **Decision:** Remove the `Services` and `Journal` nav items (and the home `#services`
 strip). Final primary nav is **About → Work → Contact**, in that order. User-confirmed.

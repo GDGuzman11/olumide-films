@@ -10,6 +10,7 @@ export const site = {
   url: "https://olumidefilms.com",
   location: "Calgary, Alberta, Canada",
   locationShort: "Calgary, AB",
+  coordinates: "51.0447° N, 114.0719° W",
   availability: "Available Worldwide",
   footerTagline: "Create. Inspire. Leave a Legacy.",
 };
