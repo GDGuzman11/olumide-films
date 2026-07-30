@@ -1,0 +1,100 @@
+// Portfolio project data (placeholder). Real footage/thumbnails swapped in later.
+// `hue` drives the placeholder gradient thumbnail until real media is added.
+
+export const categories = [
+  { id: "all", label: "All Work" },
+  { id: "brand", label: "Brand Films" },
+  { id: "weddings", label: "Weddings" },
+  { id: "documentaries", label: "Documentaries" },
+  { id: "commercials", label: "Commercials" },
+  { id: "music", label: "Music Videos" },
+];
+
+export const projects = [
+  {
+    slug: "echoes-of-you",
+    title: "Echoes of You",
+    category: "brand",
+    categoryLabel: "Brand Film",
+    year: 2025,
+    hue: 24,
+    featured: true,
+    excerpt: "A brand film about memory, craft, and the people behind the work.",
+  },
+  {
+    slug: "beyond-horizons",
+    title: "Beyond Horizons",
+    category: "documentaries",
+    categoryLabel: "Documentary",
+    year: 2025,
+    hue: 210,
+    featured: true,
+    excerpt: "A journey across the Rockies chasing light and altitude.",
+  },
+  {
+    slug: "the-moment",
+    title: "The Moment",
+    category: "weddings",
+    categoryLabel: "Wedding Film",
+    year: 2024,
+    hue: 32,
+    featured: true,
+    excerpt: "One day, told with the weight it deserves.",
+  },
+  {
+    slug: "unseen-places",
+    title: "Unseen Places",
+    category: "documentaries",
+    categoryLabel: "Travel Film",
+    year: 2024,
+    hue: 200,
+    excerpt: "Landscapes most people drive past without looking twice.",
+  },
+  {
+    slug: "precision-in-time",
+    title: "Precision in Time",
+    category: "commercials",
+    categoryLabel: "Commercial",
+    year: 2024,
+    hue: 40,
+    excerpt: "A product spot built around detail and restraint.",
+  },
+  {
+    slug: "fade-away",
+    title: "Fade Away",
+    category: "music",
+    categoryLabel: "Music Video",
+    year: 2023,
+    hue: 350,
+    excerpt: "A moody performance piece shot in a single night.",
+  },
+  {
+    slug: "built-different",
+    title: "Built Different",
+    category: "brand",
+    categoryLabel: "Brand Film",
+    year: 2023,
+    hue: 20,
+    excerpt: "A founder story about doing the hard thing on purpose.",
+  },
+  {
+    slug: "forever-starts-here",
+    title: "Forever Starts Here",
+    category: "weddings",
+    categoryLabel: "Wedding Film",
+    year: 2023,
+    hue: 30,
+    excerpt: "Two families, one afternoon, a lifetime of frames.",
+  },
+  {
+    slug: "calgary-nights",
+    title: "Calgary Nights",
+    category: "commercials",
+    categoryLabel: "City Film",
+    year: 2022,
+    hue: 260,
+    excerpt: "The city after dark, lit the way it deserves.",
+  },
+];
+
+export const featuredProjects = projects.filter((p) => p.featured);
