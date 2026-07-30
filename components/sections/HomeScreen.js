@@ -44,6 +44,13 @@ export default function HomeScreen() {
     };
   }, []);
 
+  // Landing is a single, non-scrolling screen on large viewports.
+  // Scoped to the home route: the class is removed when navigating away.
+  useEffect(() => {
+    document.body.classList.add("home-locked");
+    return () => document.body.classList.remove("home-locked");
+  }, []);
+
   return (
     <section ref={screenRef} className={styles.screen} aria-label="OLUMIDE FILMS home">
       {/* L2 — cinematic video (with atmospheric fallback) */}

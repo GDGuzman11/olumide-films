@@ -161,6 +161,16 @@ h4 {
   border-radius: 2px;
 }
 
+/* Landing page: enforce a single non-scrolling screen on large viewports.
+   (Small/portrait screens still scroll — the composition can't fit one screen
+   there without breaking usability.) */
+@media (min-width: 1024px) {
+  html:has(body.home-locked),
+  body.home-locked {
+    overflow: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
