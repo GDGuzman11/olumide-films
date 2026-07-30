@@ -1,13 +1,18 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import VideoPlaceholder from "@/components/ui/VideoPlaceholder";
+import ScrollLock from "@/components/ui/ScrollLock";
+import MiniFooter from "@/components/layout/MiniFooter";
 import { intro } from "@/data/about";
 import { site, cta } from "@/data/site";
 import styles from "./AboutIntro.module.css";
 
+// About = a single non-scrolling screen, strictly about the person.
 export default function AboutIntro() {
   return (
-    <section className={styles.section} aria-labelledby="about-title">
+    <section className={styles.screen} aria-labelledby="about-title">
+      <ScrollLock />
+
       <Container wide className={styles.inner}>
         <div className={styles.text}>
           <p className="eyebrow">{intro.eyebrow}</p>
@@ -38,6 +43,8 @@ export default function AboutIntro() {
           <VideoPlaceholder hue={intro.portraitHue} label="Behind the lens" />
         </div>
       </Container>
+
+      <MiniFooter />
     </section>
   );
 }

@@ -31,6 +31,19 @@ Resend for delivery. Success shown only after the server confirms. (Implemented 
 **Decision:** Public repo; README updated on every push. User-confirmed.
 **Why:** Doubles as a showcase; README as living documentation.
 
+## D10 — Site-wide non-scroll theme; About stripped to the person
+**Decision:** "No-scroll single screen" is now a **site-wide theme**, not just the landing.
+- **About (`/about`)** is reduced to **strictly the person** — intro (headline, bio, CTA,
+  location, portrait) only. Removed "My Approach" (value cards) and "The Mission"
+  (personal statement) so it fits one screen. Deleted `Approach`, `PersonalStatement`,
+  `ValueCard`.
+- Extracted reusables: **`ScrollLock`** (body class `screen-locked`, locks scroll ≥1024px)
+  and **`MiniFooter`** (slim footer bar), now shared by home + about. Global footer is
+  suppressed on both `/` and `/about` via `ConditionalFooter`.
+- **Work (`/work`)** will follow the same non-scroll pattern (planned Phase 4).
+**Why:** User wants a consistent single-screen experience across the site and About to be
+purely about the videographer. Small/portrait screens still scroll (usability).
+
 ## D9 — Home: cinematic layered composition (Creative-Director pass)
 **Decision:** Rebuild the home as a **7-layer, single-screen cinematic composition** (still
 strict no-scroll): background gradient → full-bleed hero `<video>` (`HeroVideo`, autoplay/

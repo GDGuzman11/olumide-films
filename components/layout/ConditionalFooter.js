@@ -3,10 +3,12 @@
 import { usePathname } from "next/navigation";
 import Footer from "./Footer";
 
-// The home page is a single, non-scrolling screen with its own slim footer bar,
-// so the global footer is suppressed there and shown on every other route.
+// Single-screen ("non-scroll") routes render their own slim MiniFooter, so the
+// global footer is suppressed there and shown on every scrolling route.
+const NO_GLOBAL_FOOTER = new Set(["/", "/about"]);
+
 export default function ConditionalFooter() {
   const pathname = usePathname();
-  if (pathname === "/") return null;
+  if (NO_GLOBAL_FOOTER.has(pathname)) return null;
   return <Footer />;
 }

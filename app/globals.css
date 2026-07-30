@@ -165,8 +165,8 @@ h4 {
    (Small/portrait screens still scroll — the composition can't fit one screen
    there without breaking usability.) */
 @media (min-width: 1024px) {
-  html:has(body.home-locked),
-  body.home-locked {
+  html:has(body.screen-locked),
+  body.screen-locked {
     overflow: hidden;
   }
 }

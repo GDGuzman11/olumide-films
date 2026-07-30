@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import Logo from "@/components/ui/Logo";
 import MediaCard from "@/components/ui/MediaCard";
 import Modal from "@/components/ui/Modal";
 import PreviewBody from "@/components/ui/PreviewBody";
 import HeroVideo from "@/components/ui/HeroVideo";
+import ScrollLock from "@/components/ui/ScrollLock";
+import MiniFooter from "@/components/layout/MiniFooter";
 import { hero, purpose } from "@/data/home";
-import { site, socials } from "@/data/site";
+import { site } from "@/data/site";
 import { featuredProjects } from "@/data/projects";
 import styles from "./HomeScreen.module.css";
 
@@ -44,15 +45,9 @@ export default function HomeScreen() {
     };
   }, []);
 
-  // Landing is a single, non-scrolling screen on large viewports.
-  // Scoped to the home route: the class is removed when navigating away.
-  useEffect(() => {
-    document.body.classList.add("home-locked");
-    return () => document.body.classList.remove("home-locked");
-  }, []);
-
   return (
     <section ref={screenRef} className={styles.screen} aria-label="OLUMIDE FILMS home">
+      <ScrollLock />
       {/* L2 — cinematic video (with atmospheric fallback) */}
       <HeroVideo src="/hero-showreel.mp4" poster="/hero-poster.svg" hue={26} />
 
@@ -130,28 +125,7 @@ export default function HomeScreen() {
       </div>
 
       {/* Slim footer pinned to the bottom edge */}
-      <div className={styles.footerBar}>
-        <Container wide className={styles.footerInner}>
-          <Logo />
-          <p className={styles.based}>
-            {site.location} · {site.availability}
-          </p>
-          <nav className={styles.socials} aria-label="Social links">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                className={styles.social}
-                target={s.href.startsWith("http") ? "_blank" : undefined}
-                rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              >
-                {s.label}
-              </a>
-            ))}
-          </nav>
-          <p className={styles.tag}>{site.footerTagline}</p>
-        </Container>
-      </div>
+      <MiniFooter />
 
       {/* Showreel modal */}
       <Modal open={reelOpen} onClose={() => setReelOpen(false)} title="OLUMIDE FILMS showreel">

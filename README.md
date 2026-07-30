@@ -70,6 +70,9 @@ Screenshots/         # reference designs
 - [ ] **Phase 6** — Responsive/a11y/security QA, Vercel + Cloudflare, final report
 
 ## Changelog
+- **Non-scroll theme** — Made `/about` a single non-scrolling screen (strictly the person:
+  intro only; removed "My Approach" + "The Mission"). Extracted shared `ScrollLock` +
+  `MiniFooter`, now used by home and about; global footer suppressed on `/` and `/about`.
 - **Phase 3** — About page (`/about`): intro with bio + portrait, "My Approach" grid of four
   `ValueCard`s, and a personal-statement section with signature. Added `data/about.js`,
   `ValueCard`, and `AboutIntro`/`Approach`/`PersonalStatement` sections.
